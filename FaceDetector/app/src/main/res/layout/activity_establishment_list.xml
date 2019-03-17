@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EstablishmentListActivity">
+
+    <ImageView
+        android:id="@+id/background_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="0dp"
+        android:scaleType="centerCrop" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp">
+        <LinearLayout
+            android:id="@+id/linear_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="2">
+            <EditText
+                android:id="@+id/search_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="14dp"
+                android:backgroundTint="#FFF"
+                android:ems="10"
+                android:hint="@string/search_text"
+                android:inputType="textPersonName"
+                android:textColor="#FFF"
+                android:textColorHint="#FFF" />
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:padding="15sp"
+                    android:id="@+id/search_est_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5sp"
+                    android:layout_marginTop="15dp"
+                    android:background="#00ffffff"
+                    android:src="@drawable/ic_magnifier_tool"
+                    android:onClick="searchButton" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="end"
+                android:layout_weight="1">
+                <ImageView
+                    android:layout_width="60sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5sp"
+                    android:layout_marginEnd="5sp"
+                    android:layout_marginTop="15dp"
+                    android:padding="5sp"
+                    android:onClick="showPopup"
+                    android:src="@drawable/iconfinder_profle_1055000" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/filter_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linear_top"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="0dp"
+            android:text="Filter : "
+            android:textColor="#FFF"
+            android:textSize="20dp" />
+
+        <Spinner
+            android:id="@+id/filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linear_top"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="-8dp"
+            android:layout_toEndOf="@+id/filter_label" />
+
+        <Button
+            android:id="@+id/search_face"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/filter_label"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="31dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/rounded_button"
+            android:onClick="detectFace"
+            android:text="@string/search_face_button" />
+
+        <LinearLayout
+            android:id="@+id/category_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/search_face"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5sp">
+
+            <ImageView
+                android:id="@+id/bakeshop_cat"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:onClick="bakeShopOnlick"
+                android:scaleType="centerInside"
+                android:src="@drawable/bakeshopicon" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:onClick="burgerShopOnClick"
+                android:scaleType="centerInside"
+                android:src="@drawable/burgericon" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:onClick="coffeeShopOnClick"
+                android:scaleType="centerInside"
+                android:src="@drawable/coffeshopicon" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/category_menu_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/category_menu"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5sp">
+
+            <ImageView
+                android:id="@+id/bakeshop_cat_1"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:onClick="iceCreamShopOnClick"
+                android:scaleType="centerInside"
+                android:src="@drawable/icecreamicon" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:onClick="pizzaShopOnlick"
+                android:scaleType="centerInside"
+                android:src="@drawable/pizzaicon" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:onClick="restaurantOnClick"
+                android:scaleType="centerInside"
+                android:src="@drawable/restauranticon" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/category_menu_2">
+
+            <LinearLayout
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical" />
+
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

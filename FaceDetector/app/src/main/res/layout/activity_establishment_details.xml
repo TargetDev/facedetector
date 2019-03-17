@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EstablishmentDetailsActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_image"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp">
+
+        <TextView
+            android:id="@+id/est_name_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="false"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:textSize="40sp" />
+
+
+        <TextView
+            android:id="@+id/product_list_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/est_name_product"
+            android:layout_alignParentStart="false"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/product_list_label"
+            android:textColor="#FFF"
+            android:textSize="15sp" />
+
+<LinearLayout
+    android:id="@+id/linear_buttons"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:orientation="horizontal"
+    android:weightSum="2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/navigate_est"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/rounded_button"
+            android:onClick="map"
+            android:text="DIRECTION"
+            android:layout_marginBottom="5dp"
+            android:textSize="15sp"
+            android:layout_marginEnd="5sp"/>
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <Button
+                android:layout_marginStart="5sp"
+                android:id="@+id/rate_link"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/rounded_button"
+                android:gravity="center"
+                android:onClick="showReviews"
+                android:text="@string/show_review_01"
+                android:textColor="#FFF"
+                android:textSize="15sp"
+                android:layout_marginBottom="5dp"/>
+        </LinearLayout>
+</LinearLayout>
+        <ScrollView
+            android:id="@+id/product_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/linear_buttons"
+            android:layout_below="@+id/product_list_label"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/linear_border_black">
+
+
+            <LinearLayout
+                android:id="@+id/product_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:id="@+id/no_result_found"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no_result_found"
+                    android:padding="10sp"
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+        </ScrollView>
+
+        <!--<TextView-->
+            <!--android:id="@+id/comment_section"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/navigate_est"-->
+            <!--android:layout_alignParentStart="false"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="@string/comment_section"-->
+            <!--android:textColor="#FFF"-->
+            <!--android:textSize="15sp" />-->
+
+        <!--<ScrollView-->
+            <!--android:id="@+id/comment_scroll_view"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_below="@+id/comment_section"-->
+            <!--android:paddingTop="10sp"-->
+            <!--android:background="@drawable/linear_border_black"-->
+            <!--android:layout_marginStart="10dp"-->
+            <!--android:layout_marginEnd="10dp">-->
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/comment_list"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:gravity="center"-->
+                <!--android:orientation="vertical"/>-->
+        <!--</ScrollView>-->
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
